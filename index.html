@@ -16,13 +16,30 @@
         }
     </style>
 
+    <script>
+      window.addEventListener("keydown", writeHTML)
+
+      function writeHTML(e) {
+        if (e.keyCode === 32) // if user pressed the spacebar
+          document.getElementById("key").innerHTML = 'Spacebar'
+        else 
+          document.getElementById("key").innerHTML = e.key
+
+        document.getElementById("key-code").innerHTML = e.keyCode
+      }
+
+    </script>
+
   </head>
   <body>
       <h1 class="first-heading">
           Keycodes for Each Key in the Keyboard
       </h1>
       <h2 class="second-heading">
-
+        You pressed the <span id="key"></span> key.
       </h2>
+      <h3 class="third-heading">
+        Its corresponding key code is <span id="key-code"></span>.
+      </h3>
   </body>
 </html>
